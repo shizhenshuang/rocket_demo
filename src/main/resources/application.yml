@@ -1,0 +1,18 @@
+server:
+  port: 80
+logging:
+  path: /home/shizhenshuang/upload/
+
+rocketmq:
+  consumer:
+    groupName: consumerGroup # 消费者的组名
+    consumeThreadMin: 2
+    consumeThreadMax: 5
+    consumeMessageBatchMaxSize: 10
+    topics: rocketTopic,rocketTag
+  producer:
+    groupName: producerGroup # 生产者的组名
+    maxMessageSize: 100
+    sendMsgTimeout: 10000
+    retryTimesWhenSendFailed: 3
+namesrvAddr: 127.0.0.1:9876 # NameServer地址
